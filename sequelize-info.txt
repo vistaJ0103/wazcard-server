@@ -1,0 +1,22 @@
+1. npm i --save-dev sequelize-cli
+2. npm i --save sequelize mysql2
+3. npx sequelize-cli init
+
+
+4. Create migrations
+=> User Model: npx sequelize-cli model:generate --name Users --attributes user_id:integer --force
+
+
+5. migrate migrations to db
+=> npx sequelize-cli db:migrate
+
+user_id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+},
+email: {
+    type: DataTypes.STRING,
+    unique: true,
+    allowNull: false
+},

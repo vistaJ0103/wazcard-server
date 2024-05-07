@@ -1,0 +1,1844 @@
+{
+	"info": {
+		"_postman_id": "e9b96eef-5263-473c-836c-b66e90229b4d",
+		"name": "wazcard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27904644"
+	},
+	"item": [
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MTcwNzMzLCJleHAiOjE2ODkzNDM1NTN9.Lr5ZN9uZm-zjsk9MSSAxcF4kqKet5vhzV5JdN3uCPZ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"URL_title\":\"talha.pk\",\r\n    \"title\": \"talha\",\r\n    \"number\": \"+923265124589\",\r\n    \"deviceName\": \"Windows\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add gallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "data:image/png;base64,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",
+									"type": "text"
+								},
+								{
+									"key": "cid",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/gallery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"gallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all admin cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/all/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"all",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all user cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/all/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"all",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete gallery",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/gallery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"gallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update settings",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cid\": 3,\r\n    \"logo\": false,\r\n    \"cover_photo\": false,\r\n    \"like_button\": false,\r\n    \"title\": false,\r\n    \"slogan\": false,\r\n    \"icons\": false,\r\n    \"hours\": false,\r\n    \"reviews\": false,\r\n    \"gallery\": false,\r\n    \"floating\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/settings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card like",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card by title",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjg3NzQ5NDQ3LCJleHAiOjE2ODc5MjIyNjd9.dg-H8k1_sgWx1jgAyuKl_YvWwlWV2wlxPPo6tz9qoqM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/talha.pk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"talha.pk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card by uid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/by-uid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"by-uid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card reviews by cid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review/by-cid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review",
+								"by-cid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card reviews by uid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review/by-uid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review",
+								"by-uid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "card by uid and title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/1/talha.pk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"1",
+								"talha.pk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update hour",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"cid\": 3,\r\n    \"from\": \"02\",\r\n    \"to\": \"55\",\r\n    \"isOpen\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/hours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"hours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update gallery",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Hamza/Desktop/images/product-1-5.jpg"
+								},
+								{
+									"key": "id",
+									"value": "2",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/gallery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"gallery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update floating icon",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"floating_icon\": \"https://psmefjsfnef.j[g\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/floating-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"floating-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update flaoting bg",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"floating_bg\": \"#343434\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/floating-bg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"floating-bg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update number",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"number\": \"+921111111111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/number",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"number"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update view count and add country in card view",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjg5MTY0Nzc5LCJleHAiOjE2ODkzMzc1OTl9.49VLwMrSNTfaPpXCwtX49gywpXi17SEEKKcbO0aHE-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country\": \"pk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/update/view/talha.pk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"update",
+								"view",
+								"talha.pk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get view country count",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjg5MTY0Nzc5LCJleHAiOjE2ODkzMzc1OTl9.49VLwMrSNTfaPpXCwtX49gywpXi17SEEKKcbO0aHE-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country\": \"pk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/view/country/count/talha.pk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"view",
+								"country",
+								"count",
+								"talha.pk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg2Njc5ODAxLCJleHAiOjE2ODY2ODM0MDF9.jBP5tygMyXS_rSITc5n7m5vUWyBFKTISm_0qhZ7EENA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cid\": 1,\r\n    \"name\": \"temp\",\r\n    \"rating\": 5,\r\n    \"description\": \"test review\",\r\n    \"isApproved\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add icon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cid\": 1,\r\n    \"type\": \"xyz\",\r\n    \"priority\": 4,\r\n    \"value\": \"loem ipsum comet iset\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "swap icon priority",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cid\": 1,\r\n    \"from\": 3,\r\n    \"to\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/icon/swap",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"icon",
+								"swap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"xyz updated\",\r\n    \"rating\": 5,\r\n    \"description\": \"loem ipsum comet iset updatd\",\r\n    \"isApproved\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/card/review/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"card",
+								"review",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"email\": \"talha@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"role\": 1,\r\n    \"type\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjg2MzMwNzAxLCJleHAiOjE2ODYzMzQzMDF9.yZJne0cKp9ZYLud5zu-t4O-uNlFTEPAP7j97i92xqSc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user1\",\r\n    \"email\": \"user1@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"prePassword\": \"54321\",\r\n    \"newPassword\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/password/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"password",
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"175281\",\r\n    \"email\": \"hitman.47.assassian@gmail.com\",\r\n    \"password\": \"011235813\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/password/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjg2MzY1MDAyLCJleHAiOjE2ODYzNjg2MDJ9.-NEMScgjA9WORNqpUBX0SeUDJcHWKJ6iVvXWR5y6GS0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"talha@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hitman.47.assassian@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/password/forgot",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/by-id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"by-id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "language",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3Nzk1NzcxLCJleHAiOjE2ODc5Njg1OTF9.d8svNCFr0RyVvObq6f6GypiDa9Ut6Bkr8p74Jqo6klk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lang_name\": \"Arabic\",\r\n    \"lang_code\": \"ar\",\r\n    \"rtl\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggleRtl",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"rtl\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language/toggle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language",
+								"toggle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update content",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"some text\",\r\n    \"myDigitalCard\": \"some text\",\r\n    \"pleaseCreateNewBusinessCard\": \"some text\",\r\n    \"createCard\": \"some text\",\r\n    \"createNewCard\": \"some text\",\r\n    \"cardDesign\": \"some text\",\r\n    \"businessLogo\": \"some text\",\r\n    \"coverLogo\": \"some text\",\r\n    \"businessName\": \"some text\",\r\n    \"title\": \"some text\",\r\n    \"slogan\": \"some text\",\r\n    \"color\": \"some text\",\r\n    \"coverColor\": \"some text\",\r\n    \"backgroundColor\": \"some text\",\r\n    \"mainIcons\": \"some text\",\r\n    \"addIcons\": \"some text\",\r\n    \"iconUsedFor\": \"some text\",\r\n    \"operatingHours\": \"some text\",\r\n    \"monday\": \"some text\",\r\n    \"tuesday\": \"some text\",\r\n    \"wednesday\": \"some text\",\r\n    \"thursday\": \"some text\",\r\n    \"friday\": \"some text\",\r\n    \"saturday\": \"some text\",\r\n    \"sunday\": \"some text\",\r\n    \"gallery\": \"some text\",\r\n    \"addPicture\": \"some text\",\r\n    \"upload\": \"some text\",\r\n    \"reviews\": \"some text\",\r\n    \"addReviews\": \"some text\",\r\n    \"editReviews\": \"some text\",\r\n    \"rateYourExperienceWith\": \"some text\",\r\n    \"floatingNumber\": \"some text\",\r\n    \"editIcon\": \"some text\",\r\n    \"generalSettings\": \"come text\",\r\n    \"preview\": \"some text\",\r\n    \"addContact\": \"some text\",\r\n    \"share\": \"some text\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language/content",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language",
+								"content"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/language/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"language",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "main icons",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEX////MzMzv7+/Jycny8vL7+/vV1dXPz8/e3t7S0tLa2trs7Oz4+Pji4uLo6Ojl5eVXon0pAAACyklEQVRoge2a27pDMBCFGyqqRN//bXfQKkrMkjVxsa0rd/83MafM5Ha7dOnSpUv/RI1XeqizJu9lrLun47481Yzy365IwnVT7Af+0Odm5Q+3Z5taGexWuT1b1+znJtijreLftgGwR1dq6DC4QyuBQ0f9OXAVcLsL9minAG4EYI9WSGhWAjaG/6trkcne6BebXMrAxpTk0JK4l47RYpPZRmdik73RGZO8n0QmejLJANeL2CNJQ4p/3A+MTKzUgGd3KnlkyGQvGviOkmllA3Mw/6Np3eALJbcs8nbDuUGmpW4sqJidyQMDEwP6eRr5vNM+z8POiyp5K/Qm0zIJmj15TbesyZ+I14mdVqvQ+ky8Z0ANILUnwcKKF1RYu22IjYF3bghMvWRALka9yCIuxp0bIJ0Y916F/GjyBbqSk6kXOiSieYVqEFA02INA4WiIftjAbIg+ECuEyURh/ihrA7nBPKgQmawy7ZUElsbY8yYpGzndsQcJWlAd8L6TKZ11p509BrELgtAq8/xRoWqZq65HQ5lMa3HzVqBOK0XUR9slS/c3B8manh0mKy9jzyNvexh/XTRTKJ51fTt0tWMvquYK9YGqPzpcJ4mj/B+FuHp9gaD9VFp8S251OXNVNUrY6vPdTDp1ZReOZu9ZxQRtmScOTaVyQ6tatUEnrhWjCS1alNuzbaSnNbU9wu3Z5eN+MJE3mauOYgd2XtoWpjetNb8P0I7RHUDPLIP6pZun7Fbdrr96i6OX+wkGDiEpe2fqXVQ63IEdiDRwjg2zNws4upfC0RtPBdXBW2j4NcEx9IpzJeCa1QsBthmKQC/PO8lZ91o6uHiWG62F0UUyk5edGrpWj9H8LgLsKaI1G9jBG+Yo8rR2oC8J4jSdX6Xz7E6TmV2i/DWSv3ksXRoZ9E3e6COZaI3HnTKmOo1TuwOHncfp493NHVYmVb0un7v/AGboIsAURuPGAAAAAElFTkSuQmCC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/main-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"main-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"image\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEX////MzMzv7+/Jycny8vL7+/vV1dXPz8/e3t7S0tLa2trs7Oz4+Pji4uLo6Ojl5eVXon0pAAACyklEQVRoge2a27pDMBCFGyqqRN//bXfQKkrMkjVxsa0rd/83MafM5Ha7dOnSpUv/RI1XeqizJu9lrLun47481Yzy365IwnVT7Af+0Odm5Q+3Z5taGexWuT1b1+znJtijreLftgGwR1dq6DC4QyuBQ0f9OXAVcLsL9minAG4EYI9WSGhWAjaG/6trkcne6BebXMrAxpTk0JK4l47RYpPZRmdik73RGZO8n0QmejLJANeL2CNJQ4p/3A+MTKzUgGd3KnlkyGQvGviOkmllA3Mw/6Np3eALJbcs8nbDuUGmpW4sqJidyQMDEwP6eRr5vNM+z8POiyp5K/Qm0zIJmj15TbesyZ+I14mdVqvQ+ky8Z0ANILUnwcKKF1RYu22IjYF3bghMvWRALka9yCIuxp0bIJ0Y916F/GjyBbqSk6kXOiSieYVqEFA02INA4WiIftjAbIg+ECuEyURh/ihrA7nBPKgQmawy7ZUElsbY8yYpGzndsQcJWlAd8L6TKZ11p509BrELgtAq8/xRoWqZq65HQ5lMa3HzVqBOK0XUR9slS/c3B8manh0mKy9jzyNvexh/XTRTKJ51fTt0tWMvquYK9YGqPzpcJ4mj/B+FuHp9gaD9VFp8S251OXNVNUrY6vPdTDp1ZReOZu9ZxQRtmScOTaVyQ6tatUEnrhWjCS1alNuzbaSnNbU9wu3Z5eN+MJE3mauOYgd2XtoWpjetNb8P0I7RHUDPLIP6pZun7Fbdrr96i6OX+wkGDiEpe2fqXVQ63IEdiDRwjg2zNws4upfC0RtPBdXBW2j4NcEx9IpzJeCa1QsBthmKQC/PO8lZ91o6uHiWG62F0UUyk5edGrpWj9H8LgLsKaI1G9jBG+Yo8rR2oC8J4jSdX6Xz7E6TmV2i/DWSv3ksXRoZ9E3e6COZaI3HnTKmOo1TuwOHncfp493NHVYmVb0un7v/AGboIsAURuPGAAAAAElFTkSuQmCC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/main-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"main-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/main-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"main-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/main-icon/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"main-icon",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/main-icon/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"main-icon",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "floating icons",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEX////MzMzv7+/Jycny8vL7+/vV1dXPz8/e3t7S0tLa2trs7Oz4+Pji4uLo6Ojl5eVXon0pAAACyklEQVRoge2a27pDMBCFGyqqRN//bXfQKkrMkjVxsa0rd/83MafM5Ha7dOnSpUv/RI1XeqizJu9lrLun47481Yzy365IwnVT7Af+0Odm5Q+3Z5taGexWuT1b1+znJtijreLftgGwR1dq6DC4QyuBQ0f9OXAVcLsL9minAG4EYI9WSGhWAjaG/6trkcne6BebXMrAxpTk0JK4l47RYpPZRmdik73RGZO8n0QmejLJANeL2CNJQ4p/3A+MTKzUgGd3KnlkyGQvGviOkmllA3Mw/6Np3eALJbcs8nbDuUGmpW4sqJidyQMDEwP6eRr5vNM+z8POiyp5K/Qm0zIJmj15TbesyZ+I14mdVqvQ+ky8Z0ANILUnwcKKF1RYu22IjYF3bghMvWRALka9yCIuxp0bIJ0Y916F/GjyBbqSk6kXOiSieYVqEFA02INA4WiIftjAbIg+ECuEyURh/ihrA7nBPKgQmawy7ZUElsbY8yYpGzndsQcJWlAd8L6TKZ11p509BrELgtAq8/xRoWqZq65HQ5lMa3HzVqBOK0XUR9slS/c3B8manh0mKy9jzyNvexh/XTRTKJ51fTt0tWMvquYK9YGqPzpcJ4mj/B+FuHp9gaD9VFp8S251OXNVNUrY6vPdTDp1ZReOZu9ZxQRtmScOTaVyQ6tatUEnrhWjCS1alNuzbaSnNbU9wu3Z5eN+MJE3mauOYgd2XtoWpjetNb8P0I7RHUDPLIP6pZun7Fbdrr96i6OX+wkGDiEpe2fqXVQ63IEdiDRwjg2zNws4upfC0RtPBdXBW2j4NcEx9IpzJeCa1QsBthmKQC/PO8lZ91o6uHiWG62F0UUyk5edGrpWj9H8LgLsKaI1G9jBG+Yo8rR2oC8J4jSdX6Xz7E6TmV2i/DWSv3ksXRoZ9E3e6COZaI3HnTKmOo1TuwOHncfp493NHVYmVb0un7v/AGboIsAURuPGAAAAAElFTkSuQmCC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/floating-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"floating-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"image\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAMFBMVEX////MzMzv7+/Jycny8vL7+/vV1dXPz8/e3t7S0tLa2trs7Oz4+Pji4uLo6Ojl5eVXon0pAAACyklEQVRoge2a27pDMBCFGyqqRN//bXfQKkrMkjVxsa0rd/83MafM5Ha7dOnSpUv/RI1XeqizJu9lrLun47481Yzy365IwnVT7Af+0Odm5Q+3Z5taGexWuT1b1+znJtijreLftgGwR1dq6DC4QyuBQ0f9OXAVcLsL9minAG4EYI9WSGhWAjaG/6trkcne6BebXMrAxpTk0JK4l47RYpPZRmdik73RGZO8n0QmejLJANeL2CNJQ4p/3A+MTKzUgGd3KnlkyGQvGviOkmllA3Mw/6Np3eALJbcs8nbDuUGmpW4sqJidyQMDEwP6eRr5vNM+z8POiyp5K/Qm0zIJmj15TbesyZ+I14mdVqvQ+ky8Z0ANILUnwcKKF1RYu22IjYF3bghMvWRALka9yCIuxp0bIJ0Y916F/GjyBbqSk6kXOiSieYVqEFA02INA4WiIftjAbIg+ECuEyURh/ihrA7nBPKgQmawy7ZUElsbY8yYpGzndsQcJWlAd8L6TKZ11p509BrELgtAq8/xRoWqZq65HQ5lMa3HzVqBOK0XUR9slS/c3B8manh0mKy9jzyNvexh/XTRTKJ51fTt0tWMvquYK9YGqPzpcJ4mj/B+FuHp9gaD9VFp8S251OXNVNUrY6vPdTDp1ZReOZu9ZxQRtmScOTaVyQ6tatUEnrhWjCS1alNuzbaSnNbU9wu3Z5eN+MJE3mauOYgd2XtoWpjetNb8P0I7RHUDPLIP6pZun7Fbdrr96i6OX+wkGDiEpe2fqXVQ63IEdiDRwjg2zNws4upfC0RtPBdXBW2j4NcEx9IpzJeCa1QsBthmKQC/PO8lZ91o6uHiWG62F0UUyk5edGrpWj9H8LgLsKaI1G9jBG+Yo8rR2oC8J4jSdX6Xz7E6TmV2i/DWSv3ksXRoZ9E3e6COZaI3HnTKmOo1TuwOHncfp493NHVYmVb0un7v/AGboIsAURuPGAAAAAElFTkSuQmCC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/floating-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"floating-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/floating-icon",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"floating-icon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/floating-icon/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"floating-icon",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3NTEyNTA0LCJleHAiOjE2ODc2ODUzMjR9.fWIoylFVFRFcztLQb8rxje5hUH5bK1ZvdaQLHeYUmS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/floating-icon/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"floating-icon",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "register admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"type\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/register/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"register",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggle user status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/admin/user/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"user",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggle card status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/admin/card/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"card",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "counter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg3OTY0NTAzLCJleHAiOjE2ODgxMzczMjN9.GoHLGA385Ttb25Hiwqna_hZLhwMEOnwyVcqFR1aEA6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/admin/counter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"counter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
