@@ -27,5 +27,5 @@ yarn-error.log*
 /*.rar
 /uncaughtexception.log
 /logfile.log
-config/.env
-config/config.json
+# config/.env
+# config/config.json
