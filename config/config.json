@@ -1,10 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "wazcard",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "ticdaimondrock_tester",
+    "password": "1K!Mf&QFXTPA",
+    "database": "ticdaimondrock_testdb",
+    "host": "162.0.211.32",
+    "dialect": "mysql",
+    "connectTimeout": 10000
   },
   "test": {
     "username": "Hamza",
