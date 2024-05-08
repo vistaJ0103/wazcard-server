@@ -5,9 +5,9 @@ const http = require("http");
 const server = http.createServer(app);
 const cloudinary = require("cloudinary").v2;
 
-// if (process.env.NODE_ENV !== "production") {
-require("dotenv").config({ path: "config/.env" });
-// }
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ path: "config/.env" });
+}
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
