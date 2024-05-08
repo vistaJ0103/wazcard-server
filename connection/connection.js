@@ -1,5 +1,5 @@
-const mysql = require("mysql2")
-const winston = require("winston")
+const mysql = require("mysql2");
+const winston = require("winston");
 
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -9,14 +9,14 @@ const db = mysql.createConnection({
   port: process.env.DB_PORT,
   connectTimeout: 15000, // Timeout in milliseconds for establishing a connection
   multipleStatements: true, // Allow executing multiple statements in a single query
-})
+});
 
 db.connect((err) => {
   if (err) {
-    winston.error(err)
+    winston.error(err);
   } else {
-    winston.info("Database Connected successfully!")
+    winston.info("Database Connected successfully!");
   }
-})
+});
 
-module.exports = db
+module.exports = db;
