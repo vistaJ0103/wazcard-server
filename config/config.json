@@ -14,9 +14,9 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "Hamza",
-    "password": "*Hamza246*",
-    "database": "wazcard",
+    "username": "root",
+    "password": "xtgSBNdkGgWCpcUSWEYbEtVASBfZPXwB",
+    "database": "railway",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
