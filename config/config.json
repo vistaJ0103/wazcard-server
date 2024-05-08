@@ -1,12 +1,12 @@
 {
   "development": {
-    "username": "ticdaimondrock_tester",
-    "password": "1K!Mf&QFXTPA",
-    "database": "ticdaimondrock_testdb",
+    "username": "ticdaimondrock_vista_dev",
+    "password": "5s6][65td)S1",
+    "database": "ticdaimondrock_vista",
     "host": "162.0.211.32",
-    "dialect": "mysql",
-    "connectTimeout": 10000
+    "dialect": "mysql"
   },
+ 
   "test": {
     "username": "Hamza",
     "password": "*Hamza246*",
@@ -15,10 +15,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "Hamza",
-    "password": "*Hamza246*",
-    "database": "wazcard",
-    "host": "127.0.0.1",
+    "username": "ticdaimondrock_vista_dev",
+    "password": "5s6][65td)S1",
+    "database": "ticdaimondrock_vista",
+    "host": "162.0.211.32",
     "dialect": "mysql"
   }
 }
