@@ -3,7 +3,7 @@
     "username": "root",
     "password": "xtgSBNdkGgWCpcUSWEYbEtVASBfZPXwB",
     "database": "railway",
-    "host": "127.0.0.1",
+    "host": "roundhouse.proxy.rlwy.net",
     "dialect": "mysql"
   },
   "test": {
@@ -17,7 +17,7 @@
     "username": "root",
     "password": "xtgSBNdkGgWCpcUSWEYbEtVASBfZPXwB",
     "database": "railway",
-    "host": "127.0.0.1",
+    "host": "roundhouse.proxy.rlwy.net",
     "dialect": "mysql"
   }
 }
