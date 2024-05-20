@@ -53,7 +53,7 @@ exports.toggleRtl = async (req, res) => {
       },
       {
         where: { id: req.body.id },
-      },
+      }
     );
     json(res, 200, "Language Updated");
   } catch (error) {
@@ -117,6 +117,11 @@ exports.updateContent = async (req, res) => {
           logo: req.body.logo,
           editIcon: req.body.editIcon,
           generalSettings: req.body.generalSettings,
+          addHome: req.body.addHome,
+          clickBottom: req.body.clickBottom,
+          scrollDown: req.body.scrollDown,
+          clickCorner: req.body.clickCorner,
+          clickOn: req.body.clickOn,
           preview: req.body.preview,
           addContact: req.body.addContact,
           emailAddress: req.body.emailAddress,
@@ -213,7 +218,7 @@ exports.updateContent = async (req, res) => {
         },
         {
           where: { id: req.body.id },
-        },
+        }
       );
       json(res, 200, "Updated successfully");
     } else {
@@ -236,7 +241,7 @@ exports.updateNameCode = async (req, res) => {
         },
         {
           where: { id: req.body.id },
-        },
+        }
       );
       json(res, 200, "Updated successfully");
     } else {
@@ -319,7 +324,7 @@ exports.updateAll = async (req, res) => {
         },
         {
           where: { id: req.body.id },
-        },
+        }
       );
       json(res, 200, "Updated successfully");
     } else {

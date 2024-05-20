@@ -185,6 +185,26 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         defaultValue: "Preview",
       },
+      addHome: {
+        type: DataTypes.TEXT,
+        defaultValue: "Add to Home Screen",
+      },
+      clickBottom: {
+        type: DataTypes.TEXT,
+        defaultValue: "Click on at the bottom of the screen",
+      },
+      scrollDown: {
+        type: DataTypes.TEXT,
+        defaultValue: "Scroll down and click on",
+      },
+      clickCorner: {
+        type: DataTypes.TEXT,
+        defaultValue: "Click on at the corner of the screen",
+      },
+      clickOn: {
+        type: DataTypes.TEXT,
+        defaultValue: "Click on",
+      },
       addContact: {
         type: DataTypes.TEXT,
         defaultValue: "Add Contact",
