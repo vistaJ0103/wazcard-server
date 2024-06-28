@@ -621,6 +621,30 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         defaultValue: "links",
       },
+      appointment: {
+        type: DataTypes.TEXT,
+        defaultValue: "Appointment",
+      },
+      addAppointment: {
+        type: DataTypes.TEXT,
+        defaultValue: "Add Appointment",
+      },
+      selectDates: {
+        type: DataTypes.TEXT,
+        defaultValue: "Select Dates",
+      },
+      bookMeeting: {
+        type: DataTypes.TEXT,
+        defaultValue: "Book Meeting",
+      },
+      createMeeting: {
+        type: DataTypes.TEXT,
+        defaultValue: "Create Meeting",
+      },
+      viewAll: {
+        type: DataTypes.TEXT,
+        defaultValue: "View All",
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

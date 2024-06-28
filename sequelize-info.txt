@@ -4,7 +4,7 @@
 
 
 4. Create migrations
-=> User Model: npx sequelize-cli model:generate --name alerts --attributes user_id:integer --force
+=> User Model: npx sequelize-cli model:generate --name bookings --attributes cid:integer --force
 
 
 5. migrate migrations to db

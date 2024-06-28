@@ -215,6 +215,12 @@ exports.updateContent = async (req, res) => {
           paymentLink5: req.body.paymentLink5,
           legal: req.body.legal,
           links: req.body.links,
+          appointment: req.body.appointment,
+          addAppointment: req.body.addAppointment,
+          selectDates: req.body.selectDates,
+          bookMeeting: req.body.bookMeeting,
+          createMeeting: req.body.createMeeting,
+          viewAll: req.body.viewAll,
         },
         {
           where: { id: req.body.id },

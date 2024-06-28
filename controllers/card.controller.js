@@ -322,6 +322,7 @@ exports.updateSettings = async (req, res) => {
           reviews: req.body.reviews,
           gallery: req.body.gallery,
           floating: req.body.floating,
+          appointment: req.body.appointment,
         },
         { where: { cid: req.body.cid } }
       );

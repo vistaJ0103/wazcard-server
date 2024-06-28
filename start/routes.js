@@ -12,6 +12,7 @@ const content = require("../routes/content");
 const designs = require("../routes/design");
 const images = require("../routes/images");
 const alerts = require("../routes/alert");
+const booking = require("../routes/booking");
 
 module.exports = function (server) {
   server.use(
@@ -33,5 +34,6 @@ module.exports = function (server) {
   server.use("/api/v1", designs);
   server.use("/api/v1", images);
   server.use("/api/v1", alerts);
+  server.use("/api/v1", booking);
   server.use(error);
 };

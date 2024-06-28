@@ -6,11 +6,9 @@ exports.isAuthenticated = async (req, res, next) => {
   const authHeader = req.headers["authorization"];
   try {
     const token = authHeader && authHeader.split(" ")[1];
-    console.log("tokenddd", token);
     if (!token) return json(res, 403, `Forbidden123 request.`);
 
     const decode = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(`decode: `, decode);
     req.user = await Users.findByPk(decode.id);
     req.token = token;
     next();

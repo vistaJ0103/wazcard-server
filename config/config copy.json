@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "wazcard_wazcard",
+    "password": "7n6MCp0{AG9R",
+    "database": "wazcard_database",
+    "host": "109.176.199.164",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "Hamza",
+    "password": "*Hamza246*",
+    "database": "wazcard",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "wazcard_wazcard",
+    "password": "7n6MCp0{AG9R",
+    "database": "wazcard_database",
+    "host": "109.176.199.164",
+    "dialect": "mysql"
+  }
+}

@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       cards.hasMany(models.hours, { foreignKey: "cid" });
       cards.hasMany(models.icons, { foreignKey: "cid" });
       cards.hasMany(models.reviews, { foreignKey: "cid" });
+      cards.hasMany(models.bookings, { foreignKey: "cid" });
       cards.belongsTo(models.reviews, { foreignKey: "id" });
       cards.belongsTo(models.languages, { foreignKey: "lang_id" });
       cards.belongsTo(models.users, { foreignKey: "uid" });

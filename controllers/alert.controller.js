@@ -16,6 +16,7 @@ exports.add = async (req, res) => {
           imageUrl: image.secure_url,
           imagePublicId: image.public_id,
           description: req.body.description,
+          url: req.body.url,
           date: date,
           count: req.body.count,
         });
@@ -74,6 +75,7 @@ exports.dataUpdate = async (req, res) => {
         {
           user_id: req.body.data.user_id,
           description: req.body.data.description,
+          url: req.body.data.url,
           date: req.body.data.date,
           count: req.body.data.count,
         },
