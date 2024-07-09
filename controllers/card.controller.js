@@ -49,7 +49,7 @@ exports.create = async (req, res) => {
         cover_public_id: cover.public_id,
         floating_icon: icon.secure_url,
         floating_public_id: icon.public_id,
-        status: "active",
+        status: "inactive",
         views: 0,
       });
       // floating_icon: `${req.protocol}://${req.get(
@@ -138,7 +138,7 @@ exports.cardByTitle = async (req, res) => {
       });
     }
     if (!data) return json(res, 404, "Card doesn't exist");
-    if (data.status !== "active") return json(res, 404, "Card disabled");
+    // if (data.status !== "active") return json(res, 404, "Card disabled");
     json(res, 200, null, data);
   } catch (error) {
     json(res, 500, error.message);

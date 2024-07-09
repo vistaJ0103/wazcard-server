@@ -1,0 +1,15 @@
+PassengerAppType node
+PassengerStartupFile app.js
+
+DirectoryIndex disabled
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteBase /
+RewriteRule ^server/(.*)?$ https://127.0.0.1:4000/$1 [P,L]
+Header set Access-Control-Allow-Origin "*"
+
+
+<Limit PUT DELETE>
+    Allow from all
+</Limit>

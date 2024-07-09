@@ -88,10 +88,21 @@ exports.send = async (req, res) => {
     };
 
     let info = await transporter.sendMail(mailOptions);
-
-    console.log("Message sent: %s");
     console.log("Message sent: %s", info.messageId);
-    res.json({ success: true, message: "Email sent successfully." });
+    const { cid, booking } = req.body;
+    let isBooking = await BookingsModel.findOne({ where: { cid: cid } });
+    if (!isBooking) {
+      return json(res, 404, "Booking not found");
+    }
+    let bookingObj = isBooking.booking;
+
+    let updatedBookings = bookingObj.filter((date) => date !== booking);
+    await BookingsModel.update(
+      { booking: updatedBookings },
+      { where: { cid: cid } }
+    );
+    const data = updatedBookings;
+    res.json({ success: true, message: "Email sent successfully.", data });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: error.message });
