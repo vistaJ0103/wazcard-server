@@ -103,6 +103,10 @@ module.exports = (sequelize, DataTypes) => {
       status: {
         type: DataTypes.STRING,
       },
+      bill: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
       views: {
         type: DataTypes.INTEGER,
       },

@@ -42,6 +42,9 @@ const {
   reviewsAll,
   updateCardView,
   getCardViewByCountryCount,
+  toggleCardStatus,
+  toggleCardBill,
+  getCardViewByCardIdCount,
 } = require("../controllers/card.controller");
 const { isAuthenticated } = require("../middleware/auth");
 
@@ -54,6 +57,7 @@ router.route("/card/public/:title").get(cardByTitlePublic);
 router.route("/card/review/uid").get(isAuthenticated, reviewsByUserId);
 router.route("/card/review/all").get(reviewsAll);
 router.route("/card/view/country/count/:title").get(getCardViewByCountryCount);
+router.route("/card/view/count").get(isAuthenticated, getCardViewByCardIdCount);
 
 router.route("/card").post(isAuthenticated, create);
 router.route("/card/gallery").post(isAuthenticated, addGallery);
@@ -94,5 +98,8 @@ router.route("/card/:id").delete(isAuthenticated, deleteCard);
 router.route("/card/gallery/:id").delete(isAuthenticated, deleteGallery);
 router.route("/card/review/:id").delete(isAuthenticated, deleteReview);
 router.route("/card/icon/:id").delete(isAuthenticated, deleteIcon);
+
+router.route("/card/status").put(isAuthenticated, toggleCardStatus);
+router.route("/card/bill").put(isAuthenticated, toggleCardBill);
 
 module.exports = router;

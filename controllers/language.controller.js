@@ -221,6 +221,13 @@ exports.updateContent = async (req, res) => {
           bookMeeting: req.body.bookMeeting,
           createMeeting: req.body.createMeeting,
           viewAll: req.body.viewAll,
+          editCard: req.body.editCard,
+          edit: req.body.edit,
+          public: req.body.public,
+          weVisitor: req.body.weVisitor,
+          moVisitor: req.body.moVisitor,
+          createdCard: req.body.createdCard,
+          newCreatedCard: req.body.newCreatedCard,
         },
         {
           where: { id: req.body.id },

@@ -645,6 +645,34 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         defaultValue: "View All",
       },
+      editCard: {
+        type: DataTypes.TEXT,
+        defaultValue: "Edit Card",
+      },
+      edit: {
+        type: DataTypes.TEXT,
+        defaultValue: "Edit",
+      },
+      public: {
+        type: DataTypes.TEXT,
+        defaultValue: "Public",
+      },
+      weVisitor: {
+        type: DataTypes.TEXT,
+        defaultValue: "Weekly Visitor",
+      },
+      moVisitor: {
+        type: DataTypes.TEXT,
+        defaultValue: "Monthly Visitor",
+      },
+      createdCard: {
+        type: DataTypes.TEXT,
+        defaultValue: "Created Cards",
+      },
+      newCreatedCard: {
+        type: DataTypes.TEXT,
+        defaultValue: "Newly Created Cards",
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,

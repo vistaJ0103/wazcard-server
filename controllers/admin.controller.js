@@ -1,11 +1,11 @@
-const json = require("../utils/jsonresponse")
-const { Op, Sequelize } = require("sequelize")
-const User = require("../models").users
-const Card = require("../models").cards
+const json = require("../utils/jsonresponse");
+const { Op, Sequelize } = require("sequelize");
+const User = require("../models").users;
+const Card = require("../models").cards;
 
 exports.toggleUserStatus = async (req, res) => {
   try {
-    let check = await User.findByPk(req.body.id)
+    let check = await User.findByPk(req.body.id);
 
     if (check) {
       await User.update(
@@ -14,40 +14,47 @@ exports.toggleUserStatus = async (req, res) => {
         },
         {
           where: { id: req.body.id },
-        },
-      )
+        }
+      );
 
-      json(res, 200, "Updated successfully")
+      json(res, 200, "Updated successfully");
     } else {
-      json(res, 404, "User not found")
+      json(res, 404, "User not found");
     }
   } catch (error) {
-    json(res, 500, error.message)
+    json(res, 500, error.message);
   }
-}
+};
 
 exports.toggleCardStatus = async (req, res) => {
   try {
-    let check = await Card.findByPk(req.body.id)
-
+    let check = await Card.findByPk(req.body.id);
+    let isBill;
+    if (req.body.status == "active") {
+      isBill = true;
+    }
+    if (req.body.status == "inactive") {
+      isBill = false;
+    }
     if (check) {
       await Card.update(
         {
           status: req.body.status,
+          bill: isBill,
         },
         {
           where: { id: req.body.id },
-        },
-      )
+        }
+      );
 
-      json(res, 200, "Updated successfully")
+      json(res, 200, "Updated successfully");
     } else {
-      json(res, 404, "Card not found")
+      json(res, 404, "Card not found");
     }
   } catch (error) {
-    json(res, 500, error.message)
+    json(res, 500, error.message);
   }
-}
+};
 
 exports.adminReports = async (req, res) => {
   try {
@@ -56,12 +63,12 @@ exports.adminReports = async (req, res) => {
       attributes: {
         exclude: ["password", "role", "resetCode"],
       },
-    })
+    });
 
-    let totalCards = await Card.count({})
+    let totalCards = await Card.count({});
 
-    let activeCards = await Card.count({ where: { status: "active" } })
-    let disabledCards = await Card.count({ where: { status: "inactive" } })
+    let activeCards = await Card.count({ where: { status: "active" } });
+    let disabledCards = await Card.count({ where: { status: "inactive" } });
 
     const cardsByMonth = await Card.findAll({
       attributes: [
@@ -70,7 +77,7 @@ exports.adminReports = async (req, res) => {
       ],
       group: [Card.sequelize.fn("DATE", Card.sequelize.col("createdAt"))],
       raw: true,
-    })
+    });
 
     let data = {
       totalCards,
@@ -78,10 +85,10 @@ exports.adminReports = async (req, res) => {
       activeCards,
       disabledCards,
       cardsByMonth,
-    }
+    };
 
-    json(res, 200, null, data)
+    json(res, 200, null, data);
   } catch (error) {
-    json(res, 500, error.message)
+    json(res, 500, error.message);
   }
-}
+};
