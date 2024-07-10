@@ -183,6 +183,29 @@ exports.reviewsByUserId = async (req, res) => {
   }
 };
 
+exports.reviewsByPending = async (req, res) => {
+  try {
+    let data = await Reviews.findAll({
+      where: { uid: req.user.id, isApproved: false },
+      include: [{ model: Card }],
+    });
+    json(res, 200, null, data);
+  } catch (error) {
+    json(res, 500, error.message);
+  }
+};
+exports.reviewsByApproved = async (req, res) => {
+  try {
+    let data = await Reviews.findAll({
+      where: { uid: req.user.id, isApproved: true },
+      include: [{ model: Card }],
+    });
+    json(res, 200, null, data);
+  } catch (error) {
+    json(res, 500, error.message);
+  }
+};
+
 exports.reviewsAll = async (req, res) => {
   try {
     let data = await Reviews.findAll({

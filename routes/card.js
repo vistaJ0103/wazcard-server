@@ -45,6 +45,8 @@ const {
   toggleCardStatus,
   toggleCardBill,
   getCardViewByCardIdCount,
+  reviewsByPending,
+  reviewsByApproved,
 } = require("../controllers/card.controller");
 const { isAuthenticated } = require("../middleware/auth");
 
@@ -55,6 +57,8 @@ router.route("/card/all/uid").get(isAuthenticated, byUserId);
 router.route("/card/:title").get(isAuthenticated, cardByTitle);
 router.route("/card/public/:title").get(cardByTitlePublic);
 router.route("/card/review/uid").get(isAuthenticated, reviewsByUserId);
+router.route("/card/review/pending").get(isAuthenticated, reviewsByPending);
+router.route("/card/review/approved").get(isAuthenticated, reviewsByApproved);
 router.route("/card/review/all").get(reviewsAll);
 router.route("/card/view/country/count/:title").get(getCardViewByCountryCount);
 router.route("/card/view/count").get(isAuthenticated, getCardViewByCardIdCount);
