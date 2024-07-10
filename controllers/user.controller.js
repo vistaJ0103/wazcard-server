@@ -96,7 +96,7 @@ exports.login = async (req, res) => {
 exports.all = async (req, res) => {
   try {
     let data = await User.findAll({
-      where: { type: "user" },
+      // where: { type: "user" },
       attributes: {
         exclude: ["password", "role", "resetCode"],
       },
